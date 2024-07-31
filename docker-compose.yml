@@ -1,0 +1,17 @@
+services:
+  runner:
+    image: agutf/github-actions-runner-image:latest
+    restart: always
+    environment:
+      - ORG=
+      - TOKEN=
+    deploy:
+      mode: replicated
+      replicas: 32
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 1G
+        reservations:
+          cpus: '0.20'
+          memory: 500M
