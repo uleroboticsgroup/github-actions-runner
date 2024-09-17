@@ -1,6 +1,6 @@
 services:
   runner:
-    image: agutf/github-actions-runner-image:latest
+    image: agutf/actions-runner-ant:latest
     restart: always
     environment:
       - ORG=
