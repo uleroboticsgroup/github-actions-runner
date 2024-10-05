@@ -1,17 +1,14 @@
 services:
   runner:
-    image: agutf/actions-runner-ant:latest
+    image: agutf/actions-runner-prg:latest
     restart: always
     environment:
       - ORG=
       - TOKEN=
     deploy:
       mode: replicated
-      replicas: 32
+      replicas: 2
       resources:
         limits:
-          cpus: '0.25'
-          memory: 1G
-        reservations:
-          cpus: '0.20'
-          memory: 500M
+          cpus: '1'
+          memory: 2G
