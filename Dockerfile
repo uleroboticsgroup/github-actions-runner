@@ -29,6 +29,8 @@ RUN wget -q https://packages.microsoft.com/config/ubuntu/24.04/packages-microsof
 # Update the list of packages after we added packages.microsoft.com and install powershell
 RUN apt-get update && apt-get install -y powershell
 
+RUN apt install -y ant maven git
+
 RUN mkdir -p /home/docker/actions-runner
 
 WORKDIR /home/docker/actions-runner
