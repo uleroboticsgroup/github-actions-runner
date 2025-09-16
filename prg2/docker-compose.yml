@@ -1,0 +1,16 @@
+services:
+  runner:
+    image: gh-actions-runner:base
+    runtime: sysbox-runc
+    restart: always
+    environment:
+      - ORG=ULE-Informatica-2025-2026
+      - TOKEN=<GITHUB_TOKEN_HERE>
+      - GROUP=PRG2
+    deploy:
+      mode: replicated
+      replicas: 4
+      resources:
+        limits:
+          cpus: '1'
+          memory: 2G
